@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     # 드롭아웃 사용 유무와 비율 설정 ========================
     use_dropout = True  # 드롭아웃을 쓰지 않을 때는 False
-    dropout_ratio = 0.2
+    dropout_ratio = 0.2 # 보통은 p = 0.5를 추천
     # ====================================================
 
     network = MultiLayerNetExtend(input_size=784, hidden_size_list=[100, 100, 100, 100, 100, 100],

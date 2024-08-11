@@ -44,8 +44,9 @@ if __name__ == '__main__':
     results_train = {}
     for _ in range(optimization_trial):
         # 탐색한 하이퍼파라미터의 범위 지정===============
-        weight_decay = 10 ** np.random.uniform(-8, -4)
-        lr = 10 ** np.random.uniform(-6, -2)
+        #이떄의 param = 가중치 감소 계수 (weight_decay), 학습률(lr)
+        weight_decay = 10 ** np.random.uniform(-8, -4)  #10^-8 ~ 10^-4 사이로 탐색
+        lr = 10 ** np.random.uniform(-6, -2) #10^-6 ~ 10^-2 사이로 탐색
         # ================================================
 
         val_acc_list, train_acc_list = __train(lr, weight_decay)

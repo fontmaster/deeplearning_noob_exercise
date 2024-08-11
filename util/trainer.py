@@ -1,8 +1,12 @@
 # coding: utf-8
 import sys, os
 
-from optimizer import Nesterov, Adam, Momentum, SGD, AdaGrad
+from optimizer.AdaGrad import AdaGrad
+from optimizer.Adam import Adam
+from optimizer.Momentum import Momentum
+from optimizer.Nesterov import Nesterov
 from optimizer.RMSProp import RMSprop
+from optimizer.SGD import SGD
 
 sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
 import numpy as np
