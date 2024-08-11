@@ -37,6 +37,7 @@ if __name__ == '__main__':
     networks = {}
     train_loss = {}
     for key in optimizers.keys():
+        #5층 신경망에서, 각 층이 100개의 뉴런으로 구성, Relu 사용 (Default) -> MultiLayerNet 주석 참고..
         networks[key] = MultiLayerNet(
             input_size=784, hidden_size_list=[100, 100, 100, 100],
             output_size=10)

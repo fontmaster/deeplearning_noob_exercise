@@ -16,7 +16,7 @@ def tanh(x):
 
 
 if __name__ == '__main__':
-    input_data = np.random.randn(1000, 100)  # 1000개의 데이터
+    input_data = np.random.randn(1000, 100)  # 1000개의 데이터, 정규분포로 난수 생성
     node_num = 100  # 각 은닉층의 노드(뉴런) 수
     hidden_layer_size = 5  # 은닉층이 5개
     activations = {}  # 이곳에 활성화 결과를 저장
@@ -27,17 +27,17 @@ if __name__ == '__main__':
         if i != 0:
             x = activations[i - 1]
 
-        # 초깃값을 다양하게 바꿔가며 실험해보자！
+
         w = np.random.randn(node_num, node_num) * 1
-        # w = np.random.randn(node_num, node_num) * 0.01
-        # w = np.random.randn(node_num, node_num) * np.sqrt(1.0 / node_num)
-        # w = np.random.randn(node_num, node_num) * np.sqrt(2.0 / node_num)
+        #w = np.random.randn(node_num, node_num) * 0.01
+        #w = np.random.randn(node_num, node_num) * np.sqrt(1.0 / node_num) #Xavier
+        #w = np.random.randn(node_num, node_num) * np.sqrt(2.0 / node_num) #he , 분산의 가중치를 2/n 으로 설정
 
         a = np.dot(x, w)
 
-        # 활성화 함수도 바꿔가며 실험해보자！
+        # 활성화 함수
         z = sigmoid(a)
-        # z = ReLU(a)
+        #z = ReLU(a)
         # z = tanh(a)
 
         activations[i] = z

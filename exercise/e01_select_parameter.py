@@ -3,6 +3,7 @@ import sys, os
 
 from optimizer.AdaGrad import AdaGrad
 from optimizer.Momentum import Momentum
+from optimizer.RMSProp import RMSprop
 from optimizer.SGD import SGD
 
 sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
@@ -30,7 +31,10 @@ if __name__ == '__main__':
     optimizers["SGD"] = SGD(lr=0.95) #lr = learning rate
     optimizers["Momentum"] = Momentum(lr=0.1)
     optimizers["AdaGrad"] = AdaGrad(lr=1.5)
+    #optimizers["RMSProp"] = RMSprop(lr=0.3)
+    #optimizers["Adam-orig"] = Adam(lr=0.001)
     optimizers["Adam"] = Adam(lr=0.3)
+
 
     idx = 1
 
