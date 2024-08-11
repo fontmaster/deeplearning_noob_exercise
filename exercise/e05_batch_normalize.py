@@ -26,9 +26,9 @@ if __name__ == '__main__':
 
     def __train(weight_init_std):
         bn_network = MultiLayerNetExtend(input_size=784, hidden_size_list=[100, 100, 100, 100, 100], output_size=10,
-                                         weight_init_std=weight_init_std, use_batchnorm=True)
+                                         weight_init_std=weight_init_std, use_batchnorm=True) #배치 정규화 사용 
         network = MultiLayerNetExtend(input_size=784, hidden_size_list=[100, 100, 100, 100, 100], output_size=10,
-                                      weight_init_std=weight_init_std)
+                                      weight_init_std=weight_init_std) #배치 정규화 사용하지 않음
         optimizer = SGD(lr=learning_rate)
 
         train_acc_list = []
